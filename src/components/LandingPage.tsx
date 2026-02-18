@@ -2,7 +2,6 @@ import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Wifi, Smartphone, TrendingUp, Shield, HeadphonesIcon, CheckCircle, ArrowRight, ChevronDown, Star } from 'lucide-react';
 import { Calculator } from './Calculator';
-import { VodafoneLogo } from './VodafoneLogo';
 import { ContactForm, ContactFormData } from './ContactForm';
 import { submitLeadToGoogleForm } from '../utils/googleForm';
 import { buildOfferSummary } from '../utils/offerSummary';
@@ -71,7 +70,6 @@ export function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <VodafoneLogo className="h-10" />
               <span className="text-sm text-vodafone-gray-500 font-medium">Empresas</span>
             </div>
             <button
@@ -150,43 +148,12 @@ export function LandingPage() {
                 </div>
               </div>
 
-              {/* Imagen de oferta Vodafone */}
-              <div className="hidden lg:flex flex-col items-center justify-center mt-4 gap-3">
-                <div className="relative w-full">
-                  <img
-                    src="/images/Oferta Vodafone.jpg"
-                    alt="Oferta Vodafone"
-                    className="w-full h-auto rounded-xl shadow-lg"
-                  />
-                </div>
-                <button
-                  onClick={() => handlePackageSelect({
-                    withFiber: true,
-                    fiberSpeed: '600Mbps',
-                    firstLinePlan: null,
-                    mobileGroups: [
-                      { id: '1', plan: 'ILIMITADA', quantity: 1 },
-                      { id: '2', plan: '25GB', quantity: 1 }
-                    ],
-                    vat21: false,
-                    subtotal: 37.85,
-                    vat: 7.95,
-                    total: 45.80,
-                    totalLines: 2
-                  })}
-                  className="w-full bg-white hover:bg-yellow-400 text-vodafone-red hover:text-vodafone-red-dark px-8 py-4 rounded-xl font-black text-xl transition-all shadow-2xl hover:shadow-3xl hover:scale-105 border-4 border-white"
-                >
-                  ¡Quiero esta oferta!
-                </button>
-              </div>
             </div>
 
             {/* Right side - Calculator */}
             <div ref={calculatorRef} className="lg:col-span-3">
               <div className="text-center mb-2">
                 <div className="flex items-center justify-center gap-2 mb-1">
-                  <VodafoneLogo className="h-7" />
-                  <span className="text-vodafone-gray-400">|</span>
                   <h2 className="text-lg font-bold text-vodafone-gray-900">
                     Calculadora de ofertas
                   </h2>
