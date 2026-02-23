@@ -63,18 +63,30 @@ export function LandingPage() {
     setSelectedPackage(null);
   };
 
+  const telecomLogos = [
+    { name: 'Movistar', src: 'https://download.logo.wine/logo/Movistar/Movistar-Logo.wine.png' },
+    { name: 'Vodafone', src: 'https://download.logo.wine/logo/Vodafone/Vodafone-Logo.wine.png' },
+    { name: 'Orange', src: 'https://download.logo.wine/logo/Orange_S.A./Orange_S.A.-Logo.wine.png' },
+    { name: 'MásMóvil', src: 'https://www.masmovil.es/assets/images/metas/logo_masmovil.png' },
+    { name: 'Digi', src: 'https://www.digimobil.es/images/favicon.png' }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <span className="text-sm text-vodafone-gray-500 font-medium">Empresas</span>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto whitespace-nowrap pr-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+              {telecomLogos.map((brand) => (
+                <div key={brand.name} className="w-20 h-8 sm:w-24 sm:h-9 shrink-0 flex items-center justify-center">
+                  <img src={brand.src} alt={`Logo ${brand.name}`} className="h-5 sm:h-6 w-auto max-w-full object-contain grayscale" loading="lazy" />
+                </div>
+              ))}
             </div>
             <button
               onClick={scrollToCalculator}
-              className="bg-vodafone-red hover:bg-vodafone-red-dark text-white px-6 py-2.5 rounded-lg font-semibold transition-colors text-sm"
+              className="w-full sm:w-auto self-stretch sm:self-auto bg-vodafone-red hover:bg-vodafone-red-dark text-white px-6 py-2.5 rounded-lg font-semibold transition-colors text-sm"
             >
               Calcular mi oferta
             </button>
