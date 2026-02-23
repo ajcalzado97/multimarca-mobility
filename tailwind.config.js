@@ -5,9 +5,9 @@ export default {
     extend: {
       colors: {
         vodafone: {
-          red: '#E60000',
-          'red-dark': '#CC0000',
-          'red-light': '#FF1A1A',
+          red: '#2563EB',
+          'red-dark': '#1D4ED8',
+          'red-light': '#60A5FA',
           gray: {
             50: '#F8F8F8',
             100: '#F0F0F0',
