@@ -18,6 +18,29 @@ interface PackageConfig {
   totalLines: number;
 }
 
+const carrierLogos = [
+  {
+    name: 'Movistar',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Movistar_logo_2022.svg'
+  },
+  {
+    name: 'Vodafone',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Vodafone_2017_logo.svg'
+  },
+  {
+    name: 'Orange',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Orange_logo.svg'
+  },
+  {
+    name: 'MásMóvil',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Logo_M%C3%A1sM%C3%B3vil.svg'
+  },
+  {
+    name: 'DIGI',
+    src: 'https://upload.wikimedia.org/wikipedia/commons/6/60/Logo_Digi_%28Spain%29.svg'
+  }
+];
+
 export function LandingPage() {
   const navigate = useNavigate();
   const calculatorRef = useRef<HTMLDivElement>(null);
@@ -68,9 +91,23 @@ export function LandingPage() {
       {/* Header */}
       <header className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <span className="text-sm text-vodafone-gray-500 font-medium">Empresas</span>
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex-1 min-w-0 overflow-x-auto">
+              <div className="flex items-center gap-2 sm:gap-3 min-w-max pr-2">
+                {carrierLogos.map((logo) => (
+                  <div
+                    key={logo.name}
+                    className="w-20 h-8 sm:w-24 sm:h-9 rounded-md bg-vodafone-gray-50/80 border border-vodafone-gray-100 px-2 py-1 flex items-center justify-center shrink-0"
+                  >
+                    <img
+                      src={logo.src}
+                      alt={`Logo de ${logo.name}`}
+                      className="w-full h-full object-contain grayscale contrast-125 brightness-75"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
             <button
               onClick={scrollToCalculator}
