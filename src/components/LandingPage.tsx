@@ -21,23 +21,23 @@ interface PackageConfig {
 const carrierLogos = [
   {
     name: 'Movistar',
-    src: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Movistar_logo_2022.svg'
+    src: '/images/carriers/movistar.svg'
   },
   {
     name: 'Vodafone',
-    src: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Vodafone_2017_logo.svg'
+    src: '/images/carriers/vodafone.svg'
   },
   {
     name: 'Orange',
-    src: 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Orange_logo.svg'
+    src: '/images/carriers/orange.svg'
   },
   {
     name: 'MásMóvil',
-    src: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Logo_M%C3%A1sM%C3%B3vil.svg'
+    src: '/images/carriers/masmovil.svg'
   },
   {
     name: 'DIGI',
-    src: 'https://upload.wikimedia.org/wikipedia/commons/6/60/Logo_Digi_%28Spain%29.svg'
+    src: '/images/carriers/digi.svg'
   }
 ];
 
